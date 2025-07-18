@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif; /* Using Inter font */
+        }
+        .order-container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+        .order-header {
+            color: #343a40;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #495057;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+            transform: translateY(-2px);
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        }
+        .item-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border: 1px solid #e9ecef;
+            border-radius: 0.5rem;
+            background-color: #fdfdfd;
+        }
+        .item-row:last-child {
+            margin-bottom: 0;
+        }
+        .item-row .form-control {
+            max-width: 80px;
+            text-align: center;
+            border-radius: 0.3rem;
+        }
+        .item-name {
+            flex-grow: 1;
+            font-weight: 500;
+            color: #343a40;
+        }
+        .item-price {
+            width: 100px;
+            text-align: right;
+            font-weight: 600;
+            color: #007bff;
+        }
+        .total-section {
+            border-top: 2px solid #e9ecef;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #28a745;
+            text-align: right;
+        }
+        #messageBox {
+            margin-top: 1.5rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar (consistent with other pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><strong><em>MLG</em></strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About.html">About Us&nbsp;</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ContactUs.html">Contact&nbsp;</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Recipe Menu&nbsp; </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Sri Lankan.html">Sri Lankan</a>
+                        <a class="dropdown-item" href="Indian.html">Indian</a>
+                        <a class="dropdown-item" href="Chines.html">Chines</a>
+                        <a class="dropdown-item" href="German.html">German</a>
+                        <a class="dropdown-item" href="italiyan.html">Italian</a>
+                        <a class="dropdown-item" href="Australian.html">Australian</a>
+                        
+                        <a class="dropdown-item" href="American.html">American</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">More Recipes</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="NSBM.html">NSBM</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="Login Page.html"> <button class="btn btn-outline-success my-2 my-sm-0">LogIn</button></a>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container order-container">
+        <h2 class="order-header">Place Your Order</h2>
+        <div id="messageBox" class="alert d-none" role="alert"></div>
+
+        <form id="orderForm">
+            <!-- Customer Details Section -->
+            <h4 class="mb-4 text-primary">Your Details</h4>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" class="form-control" id="customerPhone" name="customerPhone" placeholder="e.g., +94771234567" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="customerAddress">Delivery Address</label>
+                <textarea class="form-control" id="customerAddress" name="customerAddress" rows="3" placeholder="Enter your delivery address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="customerNotes">Special Instructions (optional)</label>
+                <textarea class="form-control" id="customerNotes" name="customerNotes" rows="2" placeholder="e.g., No spicy, extra sauce, etc."></textarea>
+            </div>
+
+            <!-- Menu Items Section -->
+            <h4 class="mb-4 mt-5 text-primary">Select Your Items</h4>
+            <div id="menuItemsContainer">
+                <!-- Menu items will be dynamically loaded here by JavaScript -->
+                <!-- Example structure:
+                <div class="item-row">
+                    <span class="item-name">Papaya Juice</span>
+                    <span class="item-price">$2.00</span>
+                    <input type="number" class="form-control item-quantity" data-price="2" data-item-name="Papaya Juice" value="0" min="0">
+                </div>
+                -->
+            </div>
+
+            <!-- Order Summary -->
+            <div class="total-section">
+                Total: $<span id="orderTotal">0.00</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-4">Place Order</button>
+        </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+    <!-- Your custom order JavaScript -->
+    <script src="js/order.js"></script>
+    <!-- You still have addtocart.js linked in Sri Lankan.html, but it's not directly used here -->
+    <!-- <script type="text/JavaScript" src="js/addtocart.js"></script> -->
+</body>
+</html>

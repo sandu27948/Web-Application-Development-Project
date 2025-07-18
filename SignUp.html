@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up Page</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+      /* Custom styles for authentication pages */
+      body {
+        background-color: #f8f9fa; /* Light background to match the overall site feel */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure it takes full viewport height */
+        margin: 0;
+      }
+      .auth-container { /* Reusing auth-container for consistency */
+        max-width: 450px; /* Slightly wider for more fields */
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: #ffffff;
+        /* Added margin for centering and spacing below navigation */
+        margin: auto; /* Centers the container horizontally */
+        margin-top: 50px; /* Adds space below the navbar */
+        margin-bottom: 50px;
+      }
+      .auth-header { /* Reusing auth-header for consistency */
+        color: #343a40; /* Dark text color for the header */
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar (consistent with Login Page and Index) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><strong><em>MLG</em></strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="index.html">Home </a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a href="Login Page.html"> <button class="btn btn-outline-success my-2 my-sm-0">LogIn</button></a>
+        </form>
+      </div>
+    </nav>
+    <br>
+    <header class="text-center my-4 auth-header"><h2>SIGN UP</h2></header>
+
+    <div class="container auth-container">
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="inputUsername">Username</label>
+          <input type="text" class="form-control" id="inputUsername" placeholder="Choose a username" required>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+          <label for="inputConfirmPassword">Confirm Password</label>
+          <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm password" required>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="termsCheck" required>
+          <label class="form-check-label" for="termsCheck">I agree to the <a href="#">terms and conditions</a></label>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="signupButton">Sign Up</button>
+        <p class="text-center mt-3">
+          Already have an account? <a href="Login Page.html">Login here</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+
+    <!-- Link to your separate JavaScript file for signup logic -->
+    <script src="js/signup.js"></script>
+  </body>
+</html>
